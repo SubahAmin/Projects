@@ -1,0 +1,21 @@
+from tkinter import *
+from tkinter.ttk import * 
+
+window = Tk()
+window.title("App 2")
+window.geometry('350x200')
+
+combo=Combobox(window)
+combo['values'] = (1,2,3,4,5,"Text")
+combo.current(2) #initial value of combo box will be 3
+combo.grid(column=0,row=0) #position of combo box
+
+lbl = Label(window,text="Hello")
+lbl.grid(column=1,row=4)
+
+def clicked():
+    lbl.configure(text = combo.get()) #hello is replaced by the option selected from combo box
+    
+btn = Button(window, text = "click me", command = clicked)
+btn.grid(column=2,row=0)
+window.mainloop()
